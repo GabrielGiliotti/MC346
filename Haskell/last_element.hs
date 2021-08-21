@@ -1,3 +1,3 @@
-last_element [] = []
-last_element [a] = [a]
-last_element (x:xs) = if tail xs /= [] then last_element xs else xs
+last_element2 [] = []
+last_element2 [a] = [a]
+last_element2 (x:xs) = last_element2 xs
