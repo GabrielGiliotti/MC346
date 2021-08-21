@@ -1,3 +1,6 @@
+ordered :: Ord t => [t] -> Bool
 ordered [] = True
 ordered [a] = True
-ordered (x:y:xs) = if x <= y then ordered (y:xs) else False 
+ordered (x:y:xs) 
+  | x <= y = ordered (y:xs) 
+  | otherwise = False 
