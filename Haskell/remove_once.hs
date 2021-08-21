@@ -1,2 +1,5 @@
+remove_once :: Eq t => t -> [t] -> [t]
 remove_once _ [] = []
-remove_once a (x:xs) = if a /= x then [x] ++ remove_once a xs else xs
+remove_once a (x:xs)
+  | a /= x = [x] ++ remove_once a xs 
+  | otherwise = xs
