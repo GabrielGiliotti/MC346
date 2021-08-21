@@ -1,3 +1,4 @@
-last_element2 [] = []
-last_element2 [a] = [a]
-last_element2 (x:xs) = last_element2 xs
+last_element :: Eq a => [a] -> [a]
+last_element [] = []
+last_element [a] = [a]
+last_element (x:xs) = last_element xs
