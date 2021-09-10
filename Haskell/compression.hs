@@ -13,5 +13,11 @@ comprime xs = map (\(e:list) -> (e, length (e:list))) (agrupa_iguais xs)
 
 
 -- descomprime
+-- replica em uma lista um dado item n vezes
+replica_item :: (Eq t, Num t) => t -> a -> [a]
+replica_item 0 item = []
+replica_item vezes item = [item]++(replica_item (vezes-1) item)
+
+-- aplica descompreção passando a tupla
 descomprime :: (Eq a) => [(a,Int)] -> [a]
-descomprime xs = [z | (x,y) <- xs, z <- (replicate y x)]
+descomprime xs = [z | (x,y) <- xs, z <- (replica_item y x)]
