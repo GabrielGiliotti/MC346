@@ -5,9 +5,7 @@ def funcao(string1, string2):
             stringOut = string1[i:]
             break
 
-    return stringOut
+    return len(stringOut)
 
-# Usado para testar
-#subString = funcao("abcxxaxxa", "xxaxxaabcd")
-#print(subString)
-#print(len(subString))
+tam = funcao("abcxxaxxa", "xxaxxaabcd")
+print(tam)
